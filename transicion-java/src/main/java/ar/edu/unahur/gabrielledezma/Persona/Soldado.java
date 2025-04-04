@@ -6,7 +6,6 @@ import ar.edu.unahur.gabrielledezma.Arma.Arma;
 import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
 
 public class Soldado extends Persona{
-
     private List<Arma> armas;
     
     public Soldado(Integer edad) {

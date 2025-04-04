@@ -3,7 +3,6 @@ package ar.edu.unahur.gabrielledezma.Persona;
 import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
 
 public class Atleta extends Persona{
-
     private Integer masaMuscular = 4;
     private Integer cantTecnicas = 2;
 

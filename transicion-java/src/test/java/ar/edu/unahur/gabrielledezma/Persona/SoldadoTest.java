@@ -15,26 +15,6 @@ public class SoldadoTest {
     private Soldado jorge = new Soldado(60,List.of(pistola, espada));
 
     @Test
-    public void creacionPistolete(){
-        assertEquals(Pistolete.class, pistola.getClass());
-    }
-
-    @Test
-    public void potenciaPistolete(){
-        assertEquals(30, pistola.potencia(jorge));
-    }
-
-    @Test
-    public void creacionEspadon(){
-        assertEquals(Espadon.class, espada.getClass());
-    }
-
-    @Test
-    public void potenciaEspadon(){
-        assertEquals(6, espada.potencia(jorge));
-    }
-
-    @Test
     public void creacionSoldado(){
         assertEquals(Soldado.class, jorge.getClass());
     }

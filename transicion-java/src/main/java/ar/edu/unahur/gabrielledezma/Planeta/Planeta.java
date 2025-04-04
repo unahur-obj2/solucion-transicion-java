@@ -6,14 +6,23 @@ import ar.edu.unahur.gabrielledezma.Persona.Persona;
 
 public class Planeta {
     private List<Persona> habitantes;
-    private Integer museos;
+    private Integer cantMuseos = 0;
     // Mas sobre el planeta
-    private Integer longitudMuralla;
+    private Integer longitudMuralla = 0;
 
-    
-    public Planeta(List<Persona> habitantes, Integer museos){
+    public Planeta(List<Persona> habitantes){
         this.habitantes = habitantes;
-        this.museos = museos;
+    }
+
+    public Planeta(List<Persona> habitantes, Integer cantMuseos){
+        this.habitantes = habitantes;
+        this.cantMuseos = cantMuseos;
+    }
+
+    public Planeta(List<Persona> habitantes, Integer cantMuseos, Integer longitudMuralla){
+        this.habitantes = habitantes;
+        this.cantMuseos = cantMuseos;
+        this.longitudMuralla = longitudMuralla;
     }
 
     public List<Persona> getHabitantes(){
@@ -32,10 +41,9 @@ public class Planeta {
             .toList()
             .size();
     }
-    
 
     public Boolean esCulto(){
-        return museos >= 2 && habitantes.stream()
+        return cantMuseos >= 2 && habitantes.stream()
                                 .allMatch(habitante -> habitante.inteligencia() >= 10);
     }
 
@@ -53,22 +61,22 @@ public class Planeta {
         return sumatorias;
     }
 
-    
+    // Mas sobre el planeta
 
     public void construirMuralla(Integer kilometros){
         this.longitudMuralla += kilometros;
     }
 
     public void fundarMuseo(){
-        this.museos += 1;
+        this.cantMuseos += 1;
     }
 
     public Integer getLongitudMuralla(){
         return longitudMuralla;
     }
 
-    public Integer getMuseos(){
-        return museos;
+    public Integer getCantMuseos(){
+        return cantMuseos;
     }
 
     public Integer potenciaAparente(){
@@ -76,6 +84,13 @@ public class Planeta {
         .mapToInt(habitante -> habitante.potencia())
         .max();
         return potencias.isPresent() ? potencias.getAsInt() * habitantes.size() : 0;
+    }
+
+    public Integer potenciaAparente2(){
+        var habitanteMasPotente = habitantes.stream()
+                            .max((h1, h2) -> h1.potencia() - h2.potencia())
+                            .get();
+        return habitanteMasPotente.potencia() * habitantes.size();
     }
 
     public Boolean necesitaReforzarse(){

@@ -4,7 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
 
 public class DocenteTest {
     private Docente monica = new Docente(45, 6);
@@ -54,4 +58,17 @@ public class DocenteTest {
     public void esDestacadaLuisa(){
         assertFalse(luisa.esDestacada());
     } 
+
+    @Test
+    public void ofreceTributoLuisa(){
+        Planeta p = new Planeta(List.of(luisa, monica));
+        luisa.ofrecerTributo(p);
+        assertEquals(1, p.getCantMuseos());
+    }
+
+    @Test
+    public void valorDeLuisa(){
+        var valor = luisa.potencia() + luisa.inteligencia() + 5;
+        assertEquals(valor, luisa.valor());
+    }
 }

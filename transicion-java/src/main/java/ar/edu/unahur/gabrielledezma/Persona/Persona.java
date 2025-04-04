@@ -3,7 +3,6 @@ package ar.edu.unahur.gabrielledezma.Persona;
 import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
 
 public class Persona {
-
     private Integer edad;
 
     //private final Integer potencia = 20; //consultar si utilizamos constantes o metodos
@@ -37,5 +36,12 @@ public class Persona {
     public Integer valor(){
         return potencia() + inteligencia();
     }
+
+    @Override
+    public String toString() {
+        return "potencia()=" + potencia()
+                + ", esDestacada()=" + esDestacada() + "]";
+    }  
+
     
 }

@@ -4,7 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
 
 public class AtletaTest {
     private Atleta ana = new Atleta(25);
@@ -94,5 +98,17 @@ public class AtletaTest {
         assertTrue(perla.esDestacada());
     }
 
+    @Test
+    public void ofreceTributoPerla(){
+        Planeta p = new Planeta(List.of(ana, rosa, perla));
+        perla.ofrecerTributo(p);
+        assertEquals(2, p.getLongitudMuralla());
+    }
+
+    @Test
+    public void valorDePerla(){
+        var valor = perla.potencia() + perla.inteligencia();
+        assertEquals(valor, perla.valor());
+    }
     
 }

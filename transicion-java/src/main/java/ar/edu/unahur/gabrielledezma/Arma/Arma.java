@@ -4,6 +4,6 @@ import ar.edu.unahur.gabrielledezma.Persona.Soldado;
 
 public interface Arma {
 
-    public abstract Integer potencia(Soldado s);
+    public Integer potencia(Soldado s);
     
 }
