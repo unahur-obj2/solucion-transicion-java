@@ -1,5 +1,7 @@
 package ar.edu.unahur.gabrielledezma.Persona;
 
+import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
+
 public class Persona {
 
     private Integer edad;
@@ -26,8 +28,14 @@ public class Persona {
         return edad == 25 || edad == 35;
     }
 
+    public void ofrecerTributo(Planeta p){
+
+    }
+
     // Valor de cada persona
 
-
+    public Integer valor(){
+        return potencia() + inteligencia();
+    }
     
 }

@@ -1,5 +1,7 @@
 package ar.edu.unahur.gabrielledezma.Persona;
 
+import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
+
 public class Docente extends Persona{
     
     private Integer cursosDados = 0;
@@ -25,6 +27,17 @@ public class Docente extends Persona{
     @Override
     public Boolean esDestacada(){
         return cursosDados > 3;
+    }
+
+    @Override
+    public void ofrecerTributo(Planeta p){
+        p.fundarMuseo();
+    }
+
+    // Valor de cada persona
+    @Override
+    public Integer valor(){
+        return super.valor() + 5;
     }
 
     

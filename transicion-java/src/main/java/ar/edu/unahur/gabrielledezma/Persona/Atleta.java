@@ -1,5 +1,7 @@
 package ar.edu.unahur.gabrielledezma.Persona;
 
+import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
+
 public class Atleta extends Persona{
 
     private Integer masaMuscular = 4;
@@ -44,5 +46,10 @@ public class Atleta extends Persona{
 
     public void aprenderTecnica(){
         cantTecnicas += 1;
+    }
+
+    @Override
+    public void ofrecerTributo(Planeta p){
+        p.construirMuralla(2);
     }
 }

@@ -2,13 +2,13 @@ package ar.edu.unahur.gabrielledezma.Planeta;
 
 import java.util.List;
 
-import ar.edu.unahur.gabrielledezma.Persona.Atleta;
-import ar.edu.unahur.gabrielledezma.Persona.Docente;
 import ar.edu.unahur.gabrielledezma.Persona.Persona;
 
 public class Planeta {
     private List<Persona> habitantes;
     private Integer museos;
+    // Mas sobre el planeta
+    private Integer longitudMuralla;
 
     
     public Planeta(List<Persona> habitantes, Integer museos){
@@ -53,9 +53,7 @@ public class Planeta {
         return sumatorias;
     }
 
-    // Mas sobre el planeta
     
-    private Integer longitudMuralla;
 
     public void construirMuralla(Integer kilometros){
         this.longitudMuralla += kilometros;
@@ -86,11 +84,22 @@ public class Planeta {
 
     public void recibirTributos(){
         for (Persona h : habitantes) {
-            if(h.getClass() == Docente.class){
-                fundarMuseo();
-            }else if(h.getClass() == Atleta.class){
-                construirMuralla(2);
-            } 
+            h.ofrecerTributo(this);
         }
+    }
+
+    // Valor de cada persona
+
+    public List<Persona> habitantesValiosos(){
+        return habitantes.stream()
+            .filter(habitante -> habitante.valor() >= 40)
+            .toList();
+    }
+
+    // Apaciguar otro planeta
+
+    public void apaciguarOtroPlaneta(Planeta otroPlaneta){
+        habitantesValiosos().forEach(h -> h.ofrecerTributo(otroPlaneta));
+
     }
 }
