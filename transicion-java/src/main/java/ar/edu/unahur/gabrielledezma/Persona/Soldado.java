@@ -23,6 +23,7 @@ public class Soldado extends Persona{
             .sum();
     }
 
+    /* 
     public Integer potencia2(){
         var potenciaArmas = 0;
         for (Arma a : armas) {
@@ -30,6 +31,7 @@ public class Soldado extends Persona{
         }
         return super.potencia() + potenciaArmas;
     }
+    */
 
     public void ofrecerTributo(Planeta p){
         p.construirMuralla(5);

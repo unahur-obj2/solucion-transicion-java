@@ -53,6 +53,7 @@ public class Planeta {
             .sum();
     }
     
+    /* 
     public Integer potenciaReal2(){
         var sumatorias = 0;
         for (Persona h : habitantes) {
@@ -60,6 +61,7 @@ public class Planeta {
         }
         return sumatorias;
     }
+    */
 
     // Mas sobre el planeta
 
@@ -79,14 +81,16 @@ public class Planeta {
         return cantMuseos;
     }
 
-    public Integer potenciaAparente(){
+    /*
+    public Integer potenciaAparente2(){
         var potencias = habitantes.stream()
         .mapToInt(habitante -> habitante.potencia())
         .max();
         return potencias.isPresent() ? potencias.getAsInt() * habitantes.size() : 0;
     }
+    */
 
-    public Integer potenciaAparente2(){
+    public Integer potenciaAparente(){
         var habitanteMasPotente = habitantes.stream()
                             .max((h1, h2) -> h1.potencia() - h2.potencia())
                             .get();

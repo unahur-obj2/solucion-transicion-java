@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import ar.edu.unahur.gabrielledezma.Arma.Espadon;
 import ar.edu.unahur.gabrielledezma.Arma.Pistolete;
+import ar.edu.unahur.gabrielledezma.Planeta.Planeta;
 
 public class SoldadoTest {
     private Pistolete pistola = new Pistolete(10);
@@ -22,5 +23,12 @@ public class SoldadoTest {
     @Test
     public void potenciaSoldado(){
         assertEquals(20 + 6 + 30, jorge.potencia());
+    }
+
+    @Test
+    public void ofreceTributoSoldado(){
+        Planeta p = new Planeta(List.of(jorge));
+        jorge.ofrecerTributo(p);
+        assertEquals(5, p.getLongitudMuralla());
     }
 }

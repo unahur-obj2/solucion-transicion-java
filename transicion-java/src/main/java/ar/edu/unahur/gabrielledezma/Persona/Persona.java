@@ -36,12 +36,5 @@ public class Persona {
     public Integer valor(){
         return potencia() + inteligencia();
     }
-
-    @Override
-    public String toString() {
-        return "potencia()=" + potencia()
-                + ", esDestacada()=" + esDestacada() + "]";
-    }  
-
     
 }
